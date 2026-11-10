@@ -1,0 +1,2313 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Her Special Day 🤍 — Happy Birthday</title>
+  
+  <!-- Google Fonts: Playfair Display, Lora, & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================================================
+       RESET & ROOT VARIABLES (Dark Romantic Charcoal Theme)
+       ========================================================= */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    :root {
+      --bg-dark: #0a060f;
+      --bg-charcoal: #120b18;
+      --bg-plum: #1c1126;
+      --accent-champagne: #fae1b2;
+      --accent-gold: #dfb776;
+      --accent-blush: #f3c1cf;
+      --accent-rose: #e28fa2;
+      --text-main: #fdfbf7;
+      --text-muted: #b8adc2;
+      --text-subtle: #7f738a;
+      
+      /* Glassmorphism */
+      --glass-bg: rgba(26, 16, 36, 0.75);
+      --glass-card: rgba(255, 255, 255, 0.05);
+      --glass-border: rgba(250, 225, 178, 0.22);
+      --glass-border-hover: rgba(250, 225, 178, 0.55);
+      --glass-glow: rgba(223, 183, 118, 0.28);
+      
+      /* Typography */
+      --font-serif: 'Playfair Display', serif;
+      --font-quote: 'Lora', serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+      
+      /* Transitions */
+      --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    html, body {
+      width: 100%;
+      min-height: 100%;
+      background: radial-gradient(circle at 50% 20%, #1e1328 0%, #110b17 50%, #07040a 100%);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Ambient Lighting Layer */
+    .ambient-glow-layer {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      background: 
+        radial-gradient(circle at 15% 25%, rgba(223, 183, 118, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(243, 193, 207, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(94, 44, 99, 0.12) 0%, transparent 65%);
+    }
+
+    /* Interactive Stardust Canvas */
+    #stardustCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Confetti Canvas */
+    #confettiCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* =========================================================
+       SLEEK MINIMALIST MUSIC CAPSULE (TULUS — MONOKROM)
+       ========================================================= */
+    .music-pill-widget {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 2000;
+      background: rgba(22, 13, 30, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 50px;
+      padding: 6px 14px 6px 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(223, 183, 118, 0.2);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      max-width: calc(100vw - 40px);
+    }
+
+    .music-pill-widget:hover {
+      border-color: var(--glass-border-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.7), 0 0 28px rgba(250, 225, 178, 0.4);
+      background: rgba(30, 18, 42, 0.95);
+    }
+
+    .music-pill-disc {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #dfb776 25%, #251633 30%, #160e1d 70%);
+      border: 1px solid var(--accent-champagne);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+      animation: spinVinyl 6s linear infinite paused;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .music-pill-widget.playing .music-pill-disc {
+      animation-play-state: running;
+    }
+
+    @keyframes spinVinyl {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .music-pill-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      line-height: 1.25;
+      user-select: none;
+    }
+
+    .music-pill-title {
+      font-family: var(--font-serif);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--accent-champagne);
+      white-space: nowrap;
+      letter-spacing: 0.3px;
+    }
+
+    .music-pill-status {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .mini-sound-bars {
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+      height: 10px;
+    }
+
+    .m-bar {
+      width: 2px;
+      height: 3px;
+      background: var(--accent-gold);
+      border-radius: 2px;
+    }
+
+    .music-pill-widget.playing .m-bar {
+      animation: miniBar 0.7s infinite alternate ease-in-out;
+    }
+
+    .music-pill-widget.playing .m-bar:nth-child(2) { animation-delay: 0.15s; }
+    .music-pill-widget.playing .m-bar:nth-child(3) { animation-delay: 0.3s; }
+
+    @keyframes miniBar {
+      0% { height: 2px; }
+      100% { height: 10px; }
+    }
+
+    .music-pill-btn {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1px solid rgba(250, 225, 178, 0.3);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--accent-champagne);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 0.75rem;
+      transition: var(--transition-smooth);
+      flex-shrink: 0;
+      margin-left: 2px;
+    }
+
+    .music-pill-widget:hover .music-pill-btn {
+      background: linear-gradient(135deg, #fae1b2, #dfb776);
+      color: #140b18;
+      border-color: #ffffff;
+    }
+
+    /* =========================================================
+       WALKING CHAT BUBBLE ("jalan" belii cimoll 🍡")
+       ========================================================= */
+    .walking-bubble-container {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      z-index: 1200;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      pointer-events: auto;
+      animation: roamWalkAcross 16s ease-in-out infinite alternate;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease;
+    }
+
+    .walking-bubble-container:hover {
+      animation-play-state: paused;
+      transform: scale(1.08) translateY(-3px);
+    }
+
+    @keyframes roamWalkAcross {
+      0% {
+        left: 24px;
+      }
+      100% {
+        left: 130px;
+      }
+    }
+
+    /* Keep speech text readable even when roaming back */
+    .walking-bubble-container:hover .chat-cloud-box,
+    .walking-bubble-container:hover .walking-avatar-bubble {
+      filter: brightness(1.1);
+    }
+
+    .walking-avatar-bubble {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #fae1b2, #dfb776);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(223, 183, 118, 0.5);
+      font-size: 1.4rem;
+      animation: cuteWaddle 0.7s infinite alternate ease-in-out;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .walking-avatar-bubble::after {
+      content: '🍡';
+      position: absolute;
+      bottom: -2px;
+      right: -4px;
+      font-size: 0.95rem;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+    }
+
+    @keyframes cuteWaddle {
+      0% { transform: translateY(0) rotate(-6deg); }
+      100% { transform: translateY(-7px) rotate(6deg); }
+    }
+
+    .chat-cloud-box {
+      background: rgba(26, 15, 36, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--accent-gold);
+      border-radius: 20px 20px 20px 6px;
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6), 0 0 18px rgba(223, 183, 118, 0.25);
+      position: relative;
+      animation: floatSpeech 2.2s infinite ease-in-out alternate;
+      white-space: nowrap;
+    }
+
+    @keyframes floatSpeech {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-5px); }
+    }
+
+    .chat-cloud-text {
+      font-family: var(--font-quote);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #ffffff;
+      letter-spacing: 0.3px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .chat-cloud-tag {
+      font-size: 0.72rem;
+      background: rgba(250, 225, 178, 0.2);
+      color: var(--accent-champagne);
+      border-radius: 12px;
+      padding: 2px 8px;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .chat-pop-burst {
+      animation: joyPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+    }
+
+    @keyframes joyPop {
+      0% { transform: scale(0.9); }
+      50% { transform: scale(1.15); }
+      100% { transform: scale(1); }
+    }
+
+    @media (max-width: 768px) {
+      .walking-bubble-container {
+        bottom: 75px;
+      }
+      @keyframes roamWalkAcross {
+        0% { left: 10px; }
+        100% { left: calc(100vw - 250px); }
+      }
+      .chat-cloud-box {
+        padding: 8px 14px;
+      }
+      .chat-cloud-text {
+        font-size: 0.85rem;
+      }
+    }
+
+    /* Floating "Kangen Kamu" Widget */
+    .kangen-floating-widget {
+      position: fixed;
+      bottom: 24px;
+      right: 25px;
+      z-index: 1000;
+    }
+
+    .kangen-pill-btn {
+      background: linear-gradient(135deg, rgba(226, 143, 162, 0.88), rgba(184, 98, 120, 0.92));
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      padding: 10px 22px;
+      border-radius: 50px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 8px 25px rgba(226, 143, 162, 0.4);
+      animation: pulseHeartBtn 2.4s infinite ease-in-out;
+      transition: var(--transition-smooth);
+    }
+
+    .kangen-pill-btn:hover {
+      transform: translateY(-3px) scale(1.05);
+      background: linear-gradient(135deg, #f3c1cf, #e28fa2);
+      box-shadow: 0 12px 30px rgba(243, 193, 207, 0.6);
+    }
+
+    @keyframes pulseHeartBtn {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.04); box-shadow: 0 10px 28px rgba(226, 143, 162, 0.55); }
+    }
+
+    /* =========================================================
+       SPA PAGE TRANSITIONS & WRAPPER
+       ========================================================= */
+    .spa-viewport {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      padding: 70px 20px 80px;
+    }
+
+    .page {
+      display: none;
+      opacity: 0;
+      width: 100%;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      transform: translateY(28px) scale(0.98);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .page.active {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .eyebrow-text {
+      font-size: 0.82rem;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+
+    .serif-title {
+      font-family: var(--font-serif);
+      font-size: 3.4rem;
+      font-weight: 600;
+      line-height: 1.15;
+      color: #ffffff;
+      text-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+      margin-bottom: 12px;
+    }
+
+    .italic-subtitle {
+      font-family: var(--font-quote);
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 35px;
+      font-weight: 400;
+    }
+
+    .btn-romantic {
+      background: linear-gradient(135deg, rgba(223, 183, 118, 0.88), rgba(184, 137, 73, 0.92));
+      color: #140b18;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      padding: 15px 38px;
+      border-radius: 50px;
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 25px rgba(223, 183, 118, 0.35);
+      transition: var(--transition-smooth);
+    }
+
+    .btn-romantic:hover:not(:disabled) {
+      transform: translateY(-3px) scale(1.04);
+      background: linear-gradient(135deg, #fae1b2, #dfb776);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 35px rgba(250, 225, 178, 0.6);
+    }
+
+    .btn-romantic:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      filter: grayscale(0.5);
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text-muted);
+      border-color: rgba(255, 255, 255, 0.1);
+      box-shadow: none;
+    }
+
+    /* =========================================================
+       HALAMAN 1: COUNTDOWN TIMER PAGE
+       ========================================================= */
+    #pageCountdown .countdown-grid {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin: 20px 0 32px;
+      flex-wrap: wrap;
+    }
+
+    .timer-cube {
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      width: 100px;
+      height: 110px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(255, 255, 255, 0.03);
+      position: relative;
+      transition: var(--transition-smooth);
+    }
+
+    .timer-cube:hover {
+      border-color: var(--glass-border-hover);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5), 0 0 25px var(--glass-glow);
+    }
+
+    .cube-number {
+      font-family: var(--font-serif);
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1;
+    }
+
+    .cube-label {
+      font-size: 0.68rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--accent-champagne);
+      margin-top: 8px;
+      font-weight: 600;
+    }
+
+    .indicator-text {
+      font-family: var(--font-quote);
+      font-size: 1.15rem;
+      color: var(--accent-blush);
+      margin-bottom: 25px;
+      letter-spacing: 0.5px;
+    }
+
+    /* =========================================================
+       HALAMAN 2: GIFT REVEAL (Kotak Kado 3D & Loading Bar)
+       ========================================================= */
+    #pageGift .gift-box-wrapper {
+      position: relative;
+      width: 180px;
+      height: 180px;
+      margin: 25px 0 35px;
+      cursor: pointer;
+      perspective: 1000px;
+    }
+
+    .animated-gift {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      animation: gentleJiggle 2.2s infinite ease-in-out;
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .gift-box-wrapper:hover .animated-gift {
+      animation: none;
+      transform: translateY(-8px) scale(1.1) rotate(3deg);
+    }
+
+    @keyframes gentleJiggle {
+      0%, 75%, 100% { transform: rotate(0deg) scale(1); }
+      78% { transform: rotate(-6deg) scale(1.05); }
+      82% { transform: rotate(6deg) scale(1.05); }
+      86% { transform: rotate(-4deg) scale(1.02); }
+      90% { transform: rotate(4deg) scale(1.02); }
+      94% { transform: rotate(0deg) scale(1); }
+    }
+
+    .loading-track {
+      width: 220px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      margin: 18px auto 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .loading-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 45%;
+      background: linear-gradient(90deg, transparent, var(--accent-champagne), transparent);
+      border-radius: 10px;
+      animation: sweepFill 1.8s infinite ease-in-out;
+    }
+
+    @keyframes sweepFill {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(250%); }
+    }
+
+    /* =========================================================
+       HALAMAN 3: INTRO UTAMA (Floating Blurred Polaroids)
+       ========================================================= */
+    #pageIntro {
+      position: relative;
+    }
+
+    .floating-polaroids-container {
+      position: absolute;
+      inset: -50px -120px;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .floating-frame {
+      position: absolute;
+      background: #ffffff;
+      padding: 10px 10px 24px 10px;
+      border-radius: 6px;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
+      width: 140px;
+      opacity: 0.45;
+      filter: blur(2.5px);
+      transition: filter 0.4s ease, opacity 0.4s ease;
+      animation: floatFrame 6s infinite ease-in-out alternate;
+    }
+
+    .floating-frame:hover {
+      filter: blur(0px);
+      opacity: 0.9;
+    }
+
+    .floating-frame.f-left-1 { top: 10%; left: 0%; transform: rotate(-12deg); animation-delay: 0s; }
+    .floating-frame.f-left-2 { bottom: 12%; left: 4%; transform: rotate(8deg); animation-delay: 1.5s; }
+    .floating-frame.f-right-1 { top: 15%; right: 0%; transform: rotate(14deg); animation-delay: 0.8s; }
+    .floating-frame.f-right-2 { bottom: 8%; right: 5%; transform: rotate(-10deg); animation-delay: 2.2s; }
+
+    @keyframes floatFrame {
+      0% { transform: translateY(0) rotate(var(--base-rot, 0deg)); }
+      100% { transform: translateY(-16px) rotate(calc(var(--base-rot, 0deg) + 3deg)); }
+    }
+
+    .floating-frame img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    /* =========================================================
+       HALAMAN 4: THE LETTER (Glassmorphism Scrollable Box)
+       ========================================================= */
+    .letter-glass-box {
+      background: var(--glass-bg);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      border: 1px solid var(--glass-border);
+      border-radius: 28px;
+      padding: 45px 40px;
+      max-width: 680px;
+      width: 100%;
+      text-align: left;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5), inset 0 0 30px rgba(255, 255, 255, 0.02);
+      margin-bottom: 35px;
+      max-height: 420px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: var(--accent-gold) rgba(255, 255, 255, 0.05);
+    }
+
+    .letter-glass-box::-webkit-scrollbar {
+      width: 6px;
+    }
+    .letter-glass-box::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+    }
+    .letter-glass-box::-webkit-scrollbar-thumb {
+      background: var(--accent-gold);
+      border-radius: 10px;
+    }
+
+    .letter-salutation {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: var(--accent-champagne);
+      margin-bottom: 20px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .letter-body {
+      font-family: var(--font-quote);
+      font-size: 1.15rem;
+      line-height: 1.95;
+      color: #ede7f6;
+    }
+
+    .letter-body p {
+      margin-bottom: 18px;
+    }
+
+    /* =========================================================
+       HALAMAN 5: GALERI MEMORI (3D FLIP POLAROID DENGAN PESAN RAHASIA)
+       ========================================================= */
+    .memory-hint-badge {
+      font-size: 0.82rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent-champagne);
+      background: rgba(250, 225, 178, 0.1);
+      border: 1px solid var(--glass-border);
+      padding: 6px 18px;
+      border-radius: 30px;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .memory-polaroid-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      width: 100%;
+      max-width: 840px;
+      margin: 10px 0 40px;
+      padding: 10px;
+    }
+
+    .flip-card-wrapper {
+      background-color: transparent;
+      width: 100%;
+      height: 380px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transform-style: preserve-3d;
+      border-radius: 8px;
+    }
+
+    .flip-card-wrapper.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 8px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.55);
+      padding: 12px 12px 20px 12px;
+    }
+
+    .flip-card-front {
+      background: #ffffff;
+      color: #1a1122;
+    }
+
+    .flip-card-back {
+      background: #fdfbf7;
+      color: #1a1122;
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 20px;
+      border: 1px dashed rgba(223, 183, 118, 0.6);
+    }
+
+    .flip-card-wrapper:hover .flip-card-inner {
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), 0 0 25px rgba(223, 183, 118, 0.35);
+    }
+
+    .memory-img-wrap {
+      width: 100%;
+      height: 290px;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #180f24;
+      position: relative;
+    }
+
+    .memory-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.5s ease;
+    }
+
+    .flip-card-front:hover .memory-img-wrap img {
+      transform: scale(1.06);
+    }
+
+    .memory-caption {
+      font-family: var(--font-quote);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: #1a1122;
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    .secret-note-title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: #93335b;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .secret-note-body {
+      font-family: var(--font-quote);
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #33223f;
+      font-style: italic;
+    }
+
+    .flip-card-wrapper:nth-child(1) { transform: rotate(-3deg); }
+    .flip-card-wrapper:nth-child(2) { transform: rotate(2deg); }
+    .flip-card-wrapper:nth-child(3) { transform: rotate(-2deg); }
+    .flip-card-wrapper:nth-child(4) { transform: rotate(3deg); }
+    .flip-card-wrapper:nth-child(5) { transform: rotate(-1.5deg); }
+    .flip-card-wrapper:nth-child(6) { transform: rotate(2.5deg); }
+
+    /* =========================================================
+       HALAMAN 6: PESAN VIDEO (HTML5 VIDEO PLAYER)
+       ========================================================= */
+    .video-cinema-frame {
+      width: 100%;
+      max-width: 640px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      padding: 16px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(223, 183, 118, 0.15);
+      margin: 15px 0 35px;
+    }
+
+    .video-player-inner {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #000000;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .video-player-inner video {
+      width: 100%;
+      max-height: 520px;
+      object-fit: contain;
+      display: block;
+      border-radius: 14px;
+    }
+
+    /* =========================================================
+       HALAMAN 7: BIRTHDAY WISHES & SHOOTING STAR CAPSULE
+       ========================================================= */
+    .wishes-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 28px;
+      padding: 45px 40px;
+      max-width: 680px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
+      margin: 10px 0 30px;
+    }
+
+    .wishes-heading {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      color: var(--accent-champagne);
+      margin-bottom: 20px;
+    }
+
+    .wishes-content {
+      font-family: var(--font-quote);
+      font-size: 1.25rem;
+      line-height: 2;
+      color: #f3ebfa;
+      font-style: italic;
+    }
+
+    .make-a-wish-section {
+      background: rgba(45, 27, 61, 0.45);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 24px 20px;
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .wish-input-field {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--glass-border);
+      border-radius: 30px;
+      padding: 12px 20px;
+      color: #ffffff;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      outline: none;
+      margin-top: 10px;
+      text-align: center;
+      transition: var(--transition-smooth);
+    }
+
+    .wish-input-field:focus {
+      border-color: var(--accent-champagne);
+      box-shadow: 0 0 15px rgba(250, 225, 178, 0.3);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .wish-input-field::placeholder {
+      color: var(--text-subtle);
+      font-style: italic;
+    }
+
+    .btn-send-wish {
+      background: linear-gradient(135deg, rgba(223, 183, 118, 0.8), rgba(184, 137, 73, 0.85));
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #140b18;
+      padding: 9px 24px;
+      border-radius: 30px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      cursor: pointer;
+      margin-top: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition-smooth);
+    }
+
+    .btn-send-wish:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(223, 183, 118, 0.4);
+      background: linear-gradient(135deg, #fae1b2, #dfb776);
+    }
+
+    .wish-sent-confirmation {
+      font-family: var(--font-quote);
+      font-size: 1.05rem;
+      color: var(--accent-champagne);
+      margin-top: 14px;
+      display: none;
+      animation: fadeIn 0.8s forwards;
+    }
+
+    /* =========================================================
+       HALAMAN 8: OUTRO (Pesan Penutup & Signature)
+       ========================================================= */
+    .outro-card {
+      max-width: 650px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .outro-message {
+      font-family: var(--font-quote);
+      font-size: 1.35rem;
+      line-height: 1.9;
+      color: #ede7f6;
+      margin: 25px 0 35px;
+    }
+
+    .outro-signature {
+      font-family: var(--font-serif);
+      font-size: 1.7rem;
+      letter-spacing: 4px;
+      color: var(--accent-gold);
+      font-weight: 700;
+      margin-bottom: 45px;
+    }
+
+    .btn-replay {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--glass-border);
+      color: var(--accent-champagne);
+      padding: 14px 34px;
+      border-radius: 50px;
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition-smooth);
+    }
+
+    .btn-replay:hover {
+      background: rgba(223, 183, 118, 0.2);
+      border-color: var(--accent-gold);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(223, 183, 118, 0.25);
+    }
+
+    /* =========================================================
+       ROMANTIC MODAL ("PESAN KANGEN")
+       ========================================================= */
+    .romantic-modal-veil {
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 4, 11, 0.85);
+      backdrop-filter: blur(10px);
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .romantic-modal-veil.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .romantic-modal-box {
+      background: linear-gradient(160deg, rgba(35, 22, 48, 0.95) 0%, rgba(18, 11, 25, 0.98) 100%);
+      border: 1px solid var(--glass-border);
+      border-radius: 28px;
+      padding: 40px 32px;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 35px rgba(243, 193, 207, 0.2);
+      position: relative;
+      transform: scale(0.9);
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .romantic-modal-veil.active .romantic-modal-box {
+      transform: scale(1);
+    }
+
+    .modal-close-x {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s ease;
+    }
+
+    .modal-close-x:hover {
+      background: rgba(239, 68, 68, 0.4);
+      border-color: #ef4444;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .serif-title { font-size: 2.4rem; }
+      .italic-subtitle { font-size: 1.15rem; }
+      .timer-cube { width: 75px; height: 85px; border-radius: 14px; }
+      .cube-number { font-size: 2rem; }
+      .cube-label { font-size: 0.6rem; letter-spacing: 1.5px; }
+      .letter-glass-box { padding: 30px 22px; max-height: 380px; }
+      .letter-salutation { font-size: 1.35rem; }
+      .letter-body { font-size: 1.05rem; line-height: 1.8; }
+      .memory-polaroid-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      .flip-card-wrapper { height: 325px; }
+      .memory-img-wrap { height: 245px; }
+      .floating-polaroids-container { display: none; }
+      .wishes-card { padding: 35px 22px; }
+      .wishes-content { font-size: 1.1rem; line-height: 1.8; }
+      .outro-message { font-size: 1.15rem; }
+      .kangen-pill-btn { padding: 8px 16px; font-size: 0.78rem; }
+      .music-pill-widget { top: 12px; right: 12px; }
+    }
+  
+    /* =========================================================
+       DEDICATED CHAT BUBBLE ABOVE VIDEO ("di atas video")
+       ========================================================= */
+    .video-chat-bubble-decor {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      cursor: pointer;
+      padding: 6px 16px;
+      background: rgba(30, 18, 42, 0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--accent-gold);
+      border-radius: 40px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 18px rgba(223, 183, 118, 0.25);
+      animation: floatSpeech 2.2s infinite ease-in-out alternate;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .video-chat-bubble-decor:hover {
+      transform: scale(1.06) translateY(-2px);
+      border-color: var(--accent-champagne);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(250, 225, 178, 0.4);
+    }
+
+    .video-bubble-avatar {
+      font-size: 1.35rem;
+      animation: cuteWaddle 0.7s infinite alternate ease-in-out;
+      display: inline-block;
+    }
+
+    .video-bubble-text {
+      font-family: var(--font-quote);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #ffffff;
+      letter-spacing: 0.3px;
+    }
+
+    .video-bubble-tag {
+      font-size: 0.72rem;
+      background: rgba(250, 225, 178, 0.2);
+      color: var(--accent-champagne);
+      border-radius: 12px;
+      padding: 2px 8px;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    /* =========================================================
+       CUSTOM PRECISE FACE POSITIONING FOR USER PHOTOS
+       ========================================================= */
+    .photo-pos-1 { object-position: center 20% !important; }
+    .photo-pos-2 { object-position: center 18% !important; }
+    .photo-pos-3 { object-position: center 28% !important; }
+    .photo-pos-4 { object-position: center 41% !important; } /* Face in middle-upper part below foliage */
+    .photo-pos-5 { object-position: center 24% !important; }
+    .photo-pos-6 { object-position: center 22% !important; }
+
+    /* Polaroid Zoom Expand Button */
+    .polaroid-zoom-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 10;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(18, 10, 26, 0.65);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(250, 225, 178, 0.4);
+      color: #ffffff;
+      font-size: 0.8rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition-smooth);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .polaroid-zoom-btn:hover {
+      background: linear-gradient(135deg, #fae1b2, #dfb776);
+      color: #140b18;
+      border-color: #ffffff;
+      transform: scale(1.15);
+      box-shadow: 0 6px 15px rgba(223, 183, 118, 0.5);
+    }
+
+    /* Fullscreen Photo Lightbox Modal */
+    .photo-lightbox-veil {
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 4, 11, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      z-index: 10001;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    .photo-lightbox-veil.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .photo-lightbox-box {
+      max-width: 540px;
+      max-height: 92vh;
+      width: 100%;
+      background: rgba(28, 17, 38, 0.96);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      padding: 22px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 35px rgba(223, 183, 118, 0.25);
+      transform: scale(0.92);
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .photo-lightbox-veil.active .photo-lightbox-box {
+      transform: scale(1);
+    }
+
+    .photo-lightbox-img-wrap {
+      width: 100%;
+      max-height: 74vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 14px;
+      background: #0d0813;
+    }
+
+    .photo-lightbox-img-wrap img {
+      max-width: 100%;
+      max-height: 74vh;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    .photo-lightbox-caption {
+      font-family: var(--font-quote);
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--accent-champagne);
+      margin-top: 14px;
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Background Lighting & Starfield Canvas -->
+  <div class="ambient-glow-layer"></div>
+  <canvas id="stardustCanvas"></canvas>
+  <canvas id="confettiCanvas"></canvas>
+
+  <!-- HTML5 Native Audio Element Playing the Exact WhatsApp Audio (Monokrom - Tulus) -->
+  <audio id="nativeAudioPlayer" loop preload="auto">
+    <source src="monokrom.mp3" type="audio/mpeg">
+    <source src="WhatsApp Audio 2026-11-10 at 20.10.27.mpeg" type="audio/mpeg">
+  </audio>
+
+  <!-- =========================================================
+       SLEEK MINIMALIST MUSIC CAPSULE (TULUS — MONOKROM)
+       ========================================================= -->
+  <div class="music-pill-widget" id="musicDock" title="Klik untuk memutar / menjeda lagu">
+    <div class="music-pill-disc" id="dockDiscIcon">🎵</div>
+    <div class="music-pill-info">
+      <div class="music-pill-title">Tulus — Monokrom</div>
+      <div class="music-pill-status">
+        <span class="mini-sound-bars">
+          <span class="m-bar"></span>
+          <span class="m-bar"></span>
+          <span class="m-bar"></span>
+        </span>
+        <span id="dockStateLabel">Putar Musik 🤍</span>
+      </div>
+    </div>
+    <button class="music-pill-btn" id="dockPlayToggle" aria-label="Toggle Musik">
+      <span id="dockToggleIcon">▶</span>
+    </button>
+  </div>
+
+  <!-- =========================================================
+       WALKING CHAT BUBBLE ("jalan" belii cimoll 🍡")
+       ========================================================= -->
+  <div class="walking-bubble-container" id="walkingCimol" title="Klik untuk jajan cimol! 🍡">
+    <div class="walking-avatar-bubble">
+      <span>🚶‍♀️</span>
+    </div>
+    <div class="chat-cloud-box" id="cimolCloudBox">
+      <span class="chat-cloud-text">
+        <span id="cimolMainText">jalan" belii cimoll</span> 🍡🤍
+      </span>
+      <span class="chat-cloud-tag">jajan yuk</span>
+    </div>
+  </div>
+
+  <!-- Floating Heart Surprise Widget (Pencet Kalau Kangen 🤍) -->
+  <div class="kangen-floating-widget">
+    <button class="kangen-pill-btn" id="openKangenModalBtn" title="Pesan rindu khusus untukmu">
+      <span>Pencet Kalau Kangen</span> 🤍
+    </button>
+  </div>
+
+  <!-- =========================================================
+       MAIN SPA VIEWPORT CONTAINER
+       ========================================================= -->
+  <main class="spa-viewport">
+
+    <!-- =======================================================
+         HALAMAN 1: HITUNG MUNDUR (COUNTDOWN PAGE)
+         ======================================================= -->
+    <section id="pageCountdown" class="page active">
+      <p class="eyebrow-text">MENGHITUNG HARI</p>
+      <h1 class="serif-title">Her Special Day<br><span style="font-weight: 400; font-style: italic;">is Coming</span></h1>
+      <p class="italic-subtitle">"Sesuatu yang indah sedang menunggu untukmu"</p>
+
+      <!-- 4 Countdown Boxes: HARI, JAM, MENIT, DETIK -->
+      <div class="countdown-grid">
+        <div class="timer-cube">
+          <span class="cube-number" id="boxDays">00</span>
+          <span class="cube-label">HARI</span>
+        </div>
+        <div class="timer-cube">
+          <span class="cube-number" id="boxHours">00</span>
+          <span class="cube-label">JAM</span>
+        </div>
+        <div class="timer-cube">
+          <span class="cube-number" id="boxMinutes">00</span>
+          <span class="cube-label">MENIT</span>
+        </div>
+        <div class="timer-cube">
+          <span class="cube-number" id="boxSeconds">08</span>
+          <span class="cube-label">DETIK</span>
+        </div>
+      </div>
+
+      <p class="indicator-text" id="countdownIndicator">Beberapa detik lagi... 🤍</p>
+
+      <!-- Button Locked Until Timer Reaches 0 -->
+      <button class="btn-romantic" id="btnCountdownNext" disabled>
+        <span id="lockIcon">🔒</span>
+        <span id="lockBtnText">TUNGGU SAMPAI WAKTUNYA...</span>
+      </button>
+    </section>
+
+
+    <!-- =======================================================
+         HALAMAN 2: BUKA KADO (GIFT REVEAL)
+         ======================================================= -->
+    <section id="pageGift" class="page">
+      <p class="eyebrow-text">ADA SESUATU UNTUKMU</p>
+      <h2 class="serif-title" style="font-size: 2.8rem;">A Special Present</h2>
+      
+      <!-- 3D Gift Box SVG Animation -->
+      <div class="gift-box-wrapper" id="giftBoxContainer" title="Klik untuk membuka kado!">
+        <div class="animated-gift">
+          <svg viewBox="0 0 200 200" width="100%" height="100%">
+            <defs>
+              <linearGradient id="boxGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#382142" />
+                <stop offset="50%" stop-color="#21132b" />
+                <stop offset="100%" stop-color="#140a1c" />
+              </linearGradient>
+              <linearGradient id="lidGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#4d2c5c" />
+                <stop offset="100%" stop-color="#281636" />
+              </linearGradient>
+              <linearGradient id="ribbonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#fae1b2" />
+                <stop offset="60%" stop-color="#dfb776" />
+                <stop offset="100%" stop-color="#b08442" />
+              </linearGradient>
+            </defs>
+            <rect x="35" y="75" width="130" height="98" rx="16" fill="url(#boxGradient)" stroke="rgba(250, 225, 178, 0.3)" stroke-width="2" />
+            <rect x="90" y="75" width="20" height="98" fill="url(#ribbonGradient)" />
+            <rect x="25" y="52" width="150" height="32" rx="10" fill="url(#lidGradient)" stroke="rgba(250, 225, 178, 0.4)" stroke-width="1.5" filter="drop-shadow(0 6px 12px rgba(0,0,0,0.6))" />
+            <rect x="90" y="52" width="20" height="32" fill="url(#ribbonGradient)" />
+            <path d="M 100,52 C 75,22 42,32 68,52 Z" fill="url(#ribbonGradient)" />
+            <path d="M 100,52 C 125,22 158,32 132,52 Z" fill="url(#ribbonGradient)" />
+            <circle cx="100" cy="52" r="9" fill="#fae1b2" />
+            <polygon points="158,135 161,142 168,145 161,148 158,155 155,148 148,145 155,142" fill="#fae1b2" opacity="0.7"/>
+            <polygon points="45,105 47,110 52,112 47,114 45,119 43,114 38,112 43,110" fill="#fae1b2" opacity="0.6"/>
+          </svg>
+        </div>
+      </div>
+
+      <p class="italic-subtitle" style="margin-bottom: 15px;">"Klik untuk membuka kadonya..."</p>
+      
+      <!-- Elegant Animated Loading Bar -->
+      <div class="loading-track">
+        <div class="loading-fill"></div>
+      </div>
+
+      <div style="margin-top: 35px;">
+        <button class="btn-romantic" id="btnOpenGift">
+          <span>BUKA SEKARANG</span> ✨
+        </button>
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+         HALAMAN 3: INTRO UTAMA (A LOVE LETTER FOR YOU)
+         ======================================================= -->
+    <section id="pageIntro" class="page">
+      <!-- Floating Blurred Polaroids Background Decoration -->
+      <div class="floating-polaroids-container">
+        <div class="floating-frame f-left-1" style="--base-rot: -12deg;">
+          <img src="foto1.jpg" class="photo-pos-1" alt="Memory Frame 1">
+        </div>
+        <div class="floating-frame f-left-2" style="--base-rot: 8deg;">
+          <img src="foto3.jpg" class="photo-pos-3" alt="Memory Frame 2">
+        </div>
+        <div class="floating-frame f-right-1" style="--base-rot: 14deg;">
+          <img src="foto4.jpg" class="photo-pos-4" alt="Memory Frame 3">
+        </div>
+        <div class="floating-frame f-right-2" style="--base-rot: -10deg;">
+          <img src="foto6.jpg" class="photo-pos-6" alt="Memory Frame 4">
+        </div>
+      </div><p class="eyebrow-text">A LOVE LETTER FOR YOU</p>
+      <h1 class="serif-title">Your Special Day</h1>
+      <p class="italic-subtitle">"Created with love, just for you"</p>
+
+      <div style="margin-top: 20px;">
+        <button class="btn-romantic" onclick="navigateTo('pageLetter')">
+          <span>READ MY LETTER</span> →
+        </button>
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+         HALAMAN 4: THE LETTER (SURAT CINTA GLASSMORPHISM)
+         ======================================================= -->
+    <section id="pageLetter" class="page">
+      <p class="eyebrow-text">A MESSAGE FROM THE HEART</p>
+      <h2 class="serif-title" style="font-size: 2.8rem; margin-bottom: 25px;">Happy Birthday</h2>
+
+      <!-- Scrollable Glassmorphism Letter Box -->
+      <div class="letter-glass-box">
+        <div class="letter-salutation">HAPPY BIRTHDAY SAYANGKUUU 🤍</div>
+        
+        <div class="letter-body">
+          <p>
+            Di hari yang sangat indah ini, aku ingin mengucapkan selamat ulang tahun untuk seseorang yang paling istimewa dalam hidupku. Terima kasih banyak sudah hadir ke dunia ini dan membawa begitu banyak tawa, kenyamanan, dan kehangatan yang tak pernah tergantikan.
+          </p>
+          <p>
+            Setiap detik yang kita lalui bersama adalah kenangan yang selalu aku simpan rapi di lubuk hatiku yang terdalam. Terima kasih telah menjadi sosok yang sabar, tulus, dan selalu ada di sampingku dalam berbagai suasana.
+          </p>
+          <p>
+            Semoga di usiamu yang baru ini, setiap langkah kakimu dimudahkan, seluruh impian dan cita-cita hebatmu didekatkan, serta hatimu selalu diliputi ketenangan dan kebahagiaan yang melimpah. Aku akan selalu ada di sini untuk mendukungmu, tersenyum bersamamu, dan mencintaimu di setiap harinya.
+          </p>
+          <p style="text-align: right; color: var(--accent-champagne); font-style: italic; margin-top: 25px;">
+            Dengan segenap cintaku,<br>
+            Selalu untukmu 🤍
+          </p>
+        </div>
+      </div>
+
+      <button class="btn-romantic" onclick="navigateTo('pageMemories')">
+        <span>OUR MEMORIES</span> →
+      </button>
+    </section>
+
+
+    <!-- =======================================================
+         HALAMAN 5: GALERI MEMORI (INTERACTIVE 3D FLIP POLAROIDS)
+         ======================================================= -->
+    <section id="pageMemories" class="page">
+      <p class="eyebrow-text">OUR SWEET JOURNEY</p>
+      <h2 class="serif-title">Our Memories</h2>
+      <p class="italic-subtitle">"every moment captured in lens 🤍"</p>
+      <span class="memory-hint-badge">💡 Klik foto mana pun untuk melihat pesan rahasia di baliknya! ↺</span>
+
+      <!-- Grid 6 Polaroid Flip Cards (Placeholder URLs mudah diganti) -->
+      <div class="memory-polaroid-grid">
+        <!-- Photo 1 -->
+        <div class="flip-card-wrapper" onclick="togglePolaroidFlip(this)">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <button class="polaroid-zoom-btn" onclick="openPhotoModal('foto1.jpg', 'Senyuman Manismu 🤍', event)" title="Lihat Foto Penuh">🔍</button>
+              <div class="memory-img-wrap">
+                <img src="foto1.jpg" class="photo-pos-1" alt="Senyuman Manismu">
+              </div>
+              <div class="memory-caption">Senyuman Manismu 🤍</div>
+            </div>
+            <div class="flip-card-back">
+              <div class="secret-note-title">Pesan Di Balik Foto #1</div>
+              <p class="secret-note-body">"Senyum manismu di foto ini selalu sukses bikin hariku yang berat jadi terasa ringan dan tenang lagi. Jangan pernah luntur ya senyumnya."</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo 2 -->
+        <div class="flip-card-wrapper" onclick="togglePolaroidFlip(this)">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <button class="polaroid-zoom-btn" onclick="openPhotoModal('foto2.jpg', 'Si Cantik Berseragam Pramuka ✨', event)" title="Lihat Foto Penuh">🔍</button>
+              <div class="memory-img-wrap">
+                <img src="foto2.jpg" class="photo-pos-2" alt="Si Cantik Berseragam Pramuka">
+              </div>
+              <div class="memory-caption">Si Cantik Berseragam Pramuka ✨</div>
+            </div>
+            <div class="flip-card-back">
+              <div class="secret-note-title">Pesan Di Balik Foto #2</div>
+              <p class="secret-note-body">"Cahaya matahari yang jatuh di wajahmu hari itu kalah cantik sama pesonamu sendiri. Selalu anggun dan berkesan di mataku."</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo 3 -->
+        <div class="flip-card-wrapper" onclick="togglePolaroidFlip(this)">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <button class="polaroid-zoom-btn" onclick="openPhotoModal('foto3.jpg', 'Selfie Favoritku 🌸', event)" title="Lihat Foto Penuh">🔍</button>
+              <div class="memory-img-wrap">
+                <img src="foto3.jpg" class="photo-pos-3" alt="Selfie Favoritku">
+              </div>
+              <div class="memory-caption">Selfie Favoritku 🌸</div>
+            </div>
+            <div class="flip-card-back">
+              <div class="secret-note-title">Pesan Di Balik Foto #3</div>
+              <p class="secret-note-body">"Tatap matamu yang teduh dan senyum tipis ini selalu jadi pemandangan terindah yang nggak pernah bikin bosan dipandang."</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo 4 (Important: Face centered with photo-pos-4) -->
+        <div class="flip-card-wrapper" onclick="togglePolaroidFlip(this)">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <button class="polaroid-zoom-btn" onclick="openPhotoModal('foto4.jpg', 'Birunya Langit & Dirimu 💙', event)" title="Lihat Foto Penuh">🔍</button>
+              <div class="memory-img-wrap">
+                <img src="foto4.jpg" class="photo-pos-4" alt="Birunya Langit & Dirimu">
+              </div>
+              <div class="memory-caption">Birunya Langit & Dirimu 💙</div>
+            </div>
+            <div class="flip-card-back">
+              <div class="secret-note-title">Pesan Di Balik Foto #4</div>
+              <p class="secret-note-body">"Di bawah langit biru cerah, kamu berdiri dengan senyuman paling memikat. Hari itu jadi salah satu momen paling indah."</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo 5 -->
+        <div class="flip-card-wrapper" onclick="togglePolaroidFlip(this)">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <button class="polaroid-zoom-btn" onclick="openPhotoModal('foto5.jpg', 'Pose Keren & Gemoy 🤍', event)" title="Lihat Foto Penuh">🔍</button>
+              <div class="memory-img-wrap">
+                <img src="foto5.jpg" class="photo-pos-5" alt="Pose Keren & Gemoy">
+              </div>
+              <div class="memory-caption">Pose Keren & Gemoy 🤍</div>
+            </div>
+            <div class="flip-card-back">
+              <div class="secret-note-title">Pesan Di Balik Foto #5</div>
+              <p class="secret-note-body">"Gaya andalanmu yang selalu gemesin! Terima kasih selalu jadi alasan di balik tawa dan rasa syukurku setiap hari."</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo 6 -->
+        <div class="flip-card-wrapper" onclick="togglePolaroidFlip(this)">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <button class="polaroid-zoom-btn" onclick="openPhotoModal('foto6.jpg', 'Si Paling Ceria 🧢✨', event)" title="Lihat Foto Penuh">🔍</button>
+              <div class="memory-img-wrap">
+                <img src="foto6.jpg" class="photo-pos-6" alt="Si Paling Ceria">
+              </div>
+              <div class="memory-caption">Si Paling Ceria 🧢✨</div>
+            </div>
+            <div class="flip-card-back">
+              <div class="secret-note-title">Pesan Di Balik Foto #6</div>
+              <p class="secret-note-body">"Pakai topi dibalik kayak gini vibes-nya ceria dan gemoy banget! Tetap jadi sosok yang ceria dan penuh energi positif ya sayang."</p>
+            </div>
+          </div>
+        </div>
+      </div><button class="btn-romantic" onclick="navigateTo('pageVideo')">
+        <span>WATCH VIDEO</span> →
+      </button>
+    </section>
+
+
+    <!-- =======================================================
+         HALAMAN 6: PESAN VIDEO (HTML5 VIDEO PLAYER)
+         ======================================================= -->
+    <section id="pageVideo" class="page">
+      <p class="eyebrow-text">A MOMENT FOR YOU</p>
+      <h2 class="serif-title">Special Video Message</h2>
+      <p class="italic-subtitle">"a special video message"</p>
+
+      <!-- Framed HTML5 Video Player -->
+      <!-- Dedicated Chat Bubble DIRECTLY ABOVE the video frame -->
+      <div class="video-chat-bubble-decor" id="videoChatBubble" title="Klik untuk jajan cimol! 🍡">
+        <span class="video-bubble-avatar">🚶‍♀️</span>
+        <span class="video-bubble-text" id="videoCimolText">“jalan" belii cimoll 🍡🤍”</span>
+        <span class="video-bubble-tag">jajan yuk</span>
+      </div>
+
+      <div class="video-cinema-frame">
+        <div class="video-player-inner">
+          <video id="birthdayVideo" controls playsinline muted loop poster="foto1.jpg">
+            <source src="video.mp4" type="video/mp4">
+            Browser Anda tidak mendukung tag video.
+          </video>
+        </div>
+      </div>
+
+      <button class="btn-romantic" onclick="navigateTo('pageWishes')">
+        <span>BIRTHDAY WISHES</span> →
+      </button>
+    </section>
+
+
+    <!-- =======================================================
+         HALAMAN 7: HALAMAN HARAPAN & WISH STAR
+         ======================================================= -->
+    <section id="pageWishes" class="page">
+      <p class="eyebrow-text">PRAYERS & HOPES</p>
+      <h2 class="serif-title">Birthday Wishes</h2>
+
+      <div class="wishes-card">
+        <div class="wishes-heading">Happy birthday, my love 🤍</div>
+        <div class="wishes-content">
+          <p>
+            Semoga kesehatan yang prima, kebahagiaan yang melimpah, dan ketenteraman batin senantiasa menyertai setiap hembusan nafasmu. 
+          </p>
+          <br>
+          <p>
+            Semoga semua cita-cita yang kamu simpan dalam doa diijabah satu per satu oleh Sang Pencipta. Jadilah dirimu yang selalu bersinar, penuh kasih, dan menginspirasi banyak orang di sekitarmu.
+          </p>
+        </div>
+
+        <!-- Interactive "Make a Wish" Star Shooting Feature -->
+        <div class="make-a-wish-section">
+          <p style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--accent-champagne);">Tuliskan Permohonanmu Hari Ini 🌠</p>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 4px;">Ketik harapan rahasiamu dan terbangkan ke langit bintang malam ini:</p>
+          <input type="text" id="userWishInput" class="wish-input-field" placeholder="Ketik permohonan / impianmu di sini..." maxlength="120">
+          <br>
+          <button class="btn-send-wish" id="btnSendWish">
+            <span>Terbangkan Ke Bintang</span> ✨
+          </button>
+          <div class="wish-sent-confirmation" id="wishConfirmedText">
+            Harapanmu telah melesat menuju bintang-bintang! Semoga semesta mengabulkannya 🤍✨
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-romantic" onclick="navigateTo('pageOutro')">
+        <span>ONE MORE THING</span> →
+      </button>
+    </section>
+
+
+    <!-- =======================================================
+         HALAMAN 8: OUTRO / PENUTUP
+         ======================================================= -->
+    <section id="pageOutro" class="page">
+      <div class="outro-card">
+        <p class="eyebrow-text">FOREVER & ALWAYS</p>
+        <h1 class="serif-title" style="font-size: 3.8rem;">Happy Birthday</h1>
+
+        <p class="outro-message">
+          "Thank you for being part of my life. I hope this little gift can make your special day even more beautiful."
+        </p>
+
+        <div class="outro-signature">
+          FOREVER YOURS. 🤍
+        </div>
+
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
+          <button class="btn-replay" onclick="navigateTo('pageIntro')">
+            ↺ REPLAY FROM START
+          </button>
+          <button class="dock-local-link" style="background: none; border: none; font-size: 0.8rem; opacity: 0.7; cursor: pointer;" onclick="restartCountdownAndNavigate()">
+            ⏳ Ulangi dari Halaman Hitung Mundur
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =========================================================
+       ROMANTIC MODAL ("PESAN KANGEN")
+       ========================================================= -->
+  <div class="romantic-modal-veil" id="kangenModal" onclick="closeKangenModal(event)">
+    <div class="romantic-modal-box" onclick="event.stopPropagation()">
+      <button class="modal-close-x" onclick="closeKangenModal()">✕</button>
+      <div style="font-size: 2.5rem; margin-bottom: 10px;">💌</div>
+      <h3 style="font-family: var(--font-serif); font-size: 1.55rem; color: var(--accent-champagne); margin-bottom: 12px;">Untukmu yang Sedang Kangen</h3>
+      <p id="kangenRandomMessage" style="font-family: var(--font-quote); font-size: 1.15rem; line-height: 1.8; color: #ede7f6; font-style: italic; margin-bottom: 25px;">
+        "Kalau kamu lagi kangen, ingat ya kalau di sini ada seseorang yang sayangnya berlipat-lipat kali lebih banyak ke kamu. Peluk hangat dari jauh 🤍"
+      </p>
+      <button class="btn-romantic" style="padding: 10px 28px; font-size: 0.84rem;" onclick="generateNextKangenMessage()">
+        <span>Pesan Lainnya</span> ↺
+      </button>
+    </div>
+  </div>
+
+
+  <!-- =========================================================
+       JAVASCRIPT LOGIC
+       ========================================================= -->
+  <script>
+    /* =========================================================
+       1. MUSIC CONTROLLER (Direct HTML5 Audio with WhatsApp Monokrom)
+       ========================================================= */
+    const musicDock = document.getElementById('musicDock');
+    const dockPlayToggle = document.getElementById('dockPlayToggle');
+    const dockToggleIcon = document.getElementById('dockToggleIcon');
+    const dockStateLabel = document.getElementById('dockStateLabel');
+    const nativeAudio = document.getElementById('nativeAudioPlayer');
+
+    let isMusicPlaying = false;
+
+    // Toggle Music Playback
+    function toggleMusicPlayback(e) {
+      if (e) e.stopPropagation();
+      if (isMusicPlaying) {
+        triggerMusicPause();
+      } else {
+        triggerMusicStart();
+      }
+    }
+
+    if (musicDock) musicDock.addEventListener('click', toggleMusicPlayback);
+    if (dockPlayToggle) dockPlayToggle.addEventListener('click', toggleMusicPlayback);
+
+    // Play Music
+    function triggerMusicStart() {
+      if (!nativeAudio) return;
+      nativeAudio.play().then(() => {
+        isMusicPlaying = true;
+        musicDock.classList.add('playing');
+        if (dockToggleIcon) dockToggleIcon.textContent = '⏸';
+        if (dockStateLabel) dockStateLabel.textContent = 'Monokrom 🎶';
+      }).catch(err => {
+        console.log('Autoplay waiting for user gesture:', err);
+      });
+    }
+
+    // Pause Music
+    function triggerMusicPause() {
+      if (nativeAudio) {
+        nativeAudio.pause();
+      }
+      isMusicPlaying = false;
+      musicDock.classList.remove('playing');
+      if (dockToggleIcon) dockToggleIcon.textContent = '▶';
+      if (dockStateLabel) dockStateLabel.textContent = 'Musik Dijeda ⏸';
+    }
+
+    // First interaction starts music smoothly
+    function handleFirstUserClick() {
+      if (!isMusicPlaying) {
+        triggerMusicStart();
+      }
+    }
+    document.addEventListener('click', handleFirstUserClick, { once: true });
+    document.addEventListener('touchstart', handleFirstUserClick, { once: true });
+
+    // Video Muting Guard: Ensure the video stays completely silent as requested
+    const bVideo = document.getElementById('birthdayVideo');
+    if (bVideo) {
+      bVideo.muted = true;
+      bVideo.volume = 0;
+      bVideo.addEventListener('volumechange', () => {
+        if (!bVideo.muted) {
+          bVideo.muted = true;
+          bVideo.volume = 0;
+        }
+      });
+    }
+
+    // Walking Chat Bubble Interactive Logic ("jalan" belii cimoll")
+    const walkingCimol = document.getElementById('walkingCimol');
+    const cimolCloudBox = document.getElementById('cimolCloudBox');
+    const cimolMainText = document.getElementById('cimolMainText');
+
+    const cimolQuotes = [
+      'Beli 5 ribu bumbu pedas manis ya! 😋✨',
+      'Makan cimol anget sambil liat senyum kamu 🤍',
+      'Cimolnya kenyal, rasa sayangnya abadi 🥰',
+      'Habis beli cimol kita jalan-jalan kemana lagi nih? 🌸',
+      'Pedas dikit nggak apa-apa, asal makannya bareng kamu 🍡',
+      'jalan" belii cimoll'
+    ];
+    let cimolIndex = 0;
+    let cimolTimer = null;
+
+    if (walkingCimol) {
+      walkingCimol.addEventListener('click', (e) => {
+        e.stopPropagation();
+        cimolCloudBox.classList.add('chat-pop-burst');
+        setTimeout(() => cimolCloudBox.classList.remove('chat-pop-burst'), 600);
+
+        const rect = walkingCimol.getBoundingClientRect();
+        fireConfetti(rect.left + rect.width / 2, rect.top, 40);
+
+        cimolIndex = (cimolIndex + 1) % cimolQuotes.length;
+        cimolMainText.textContent = cimolQuotes[cimolIndex];
+
+        clearTimeout(cimolTimer);
+        cimolTimer = setTimeout(() => {
+          cimolMainText.textContent = 'jalan" belii cimoll';
+        }, 4000);
+      });
+    }
+
+    /* =========================================================
+       2. STARDUST BACKGROUND ENGINE & SHOOTING STARS (Canvas)
+       ========================================================= */
+    const starCanvas = document.getElementById('stardustCanvas');
+    const sCtx = starCanvas.getContext('2d');
+    let stars = [];
+    let shootingStars = [];
+
+    function resizeStarCanvas() {
+      starCanvas.width = window.innerWidth;
+      starCanvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeStarCanvas);
+    resizeStarCanvas();
+
+    class Star {
+      constructor() { this.reset(); }
+      reset() {
+        this.x = Math.random() * starCanvas.width;
+        this.y = Math.random() * starCanvas.height;
+        this.size = Math.random() * 2 + 0.5;
+        this.baseAlpha = Math.random() * 0.7 + 0.2;
+        this.alpha = this.baseAlpha;
+        this.twinkleSpeed = Math.random() * 0.02 + 0.008;
+        this.twinkleDir = Math.random() > 0.5 ? 1 : -1;
+        this.vx = (Math.random() - 0.5) * 0.18;
+        this.vy = -(Math.random() * 0.25 + 0.05);
+        this.color = ['#ffffff', '#fae1b2', '#f3c1cf', '#dfb776'][Math.floor(Math.random() * 4)];
+      }
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        this.alpha += this.twinkleSpeed * this.twinkleDir;
+        if (this.alpha >= 0.95) this.twinkleDir = -1;
+        if (this.alpha <= 0.15) this.twinkleDir = 1;
+        if (this.y < -10 || this.x < -10 || this.x > starCanvas.width + 10) {
+          this.reset();
+          this.y = starCanvas.height + 5;
+        }
+      }
+      draw() {
+        sCtx.save();
+        sCtx.globalAlpha = Math.max(this.alpha, 0);
+        sCtx.fillStyle = this.color;
+        sCtx.shadowColor = this.color;
+        sCtx.shadowBlur = this.size * 3;
+        sCtx.beginPath();
+        sCtx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        sCtx.fill();
+        sCtx.restore();
+      }
+    }
+
+    class ShootingStar {
+      constructor() {
+        this.x = Math.random() * starCanvas.width * 0.7;
+        this.y = Math.random() * starCanvas.height * 0.4;
+        this.len = Math.random() * 120 + 80;
+        this.speed = Math.random() * 12 + 10;
+        this.angle = Math.PI / 4;
+        this.alpha = 1;
+      }
+      update() {
+        this.x += Math.cos(this.angle) * this.speed;
+        this.y += Math.sin(this.angle) * this.speed;
+        this.alpha -= 0.025;
+      }
+      draw() {
+        sCtx.save();
+        sCtx.globalAlpha = Math.max(this.alpha, 0);
+        const grad = sCtx.createLinearGradient(
+          this.x, this.y,
+          this.x - Math.cos(this.angle) * this.len,
+          this.y - Math.sin(this.angle) * this.len
+        );
+        grad.addColorStop(0, '#ffffff');
+        grad.addColorStop(0.3, '#fae1b2');
+        grad.addColorStop(1, 'transparent');
+        sCtx.strokeStyle = grad;
+        sCtx.lineWidth = 2.5;
+        sCtx.beginPath();
+        sCtx.moveTo(this.x, this.y);
+        sCtx.lineTo(this.x - Math.cos(this.angle) * this.len, this.y - Math.sin(this.angle) * this.len);
+        sCtx.stroke();
+        sCtx.restore();
+      }
+    }
+
+    for (let i = 0; i < 95; i++) stars.push(new Star());
+
+    function launchShootingStar() {
+      shootingStars.push(new ShootingStar());
+    }
+    setInterval(() => {
+      if (Math.random() > 0.35) launchShootingStar();
+    }, 8500);
+
+    function animateStardust() {
+      sCtx.clearRect(0, 0, starCanvas.width, starCanvas.height);
+      stars.forEach(star => {
+        star.update();
+        star.draw();
+      });
+      for (let i = shootingStars.length - 1; i >= 0; i--) {
+        shootingStars[i].update();
+        shootingStars[i].draw();
+        if (shootingStars[i].alpha <= 0) shootingStars.splice(i, 1);
+      }
+      requestAnimationFrame(animateStardust);
+    }
+    animateStardust();
+
+
+    /* =========================================================
+       3. CONFETTI BURST ENGINE (Canvas Particle)
+       ========================================================= */
+    const confCanvas = document.getElementById('confettiCanvas');
+    const cCtx = confCanvas.getContext('2d');
+    let confettiPool = [];
+
+    function resizeConfettiCanvas() {
+      confCanvas.width = window.innerWidth;
+      confCanvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeConfettiCanvas);
+    resizeConfettiCanvas();
+
+    class Confetti {
+      constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.size = Math.random() * 7 + 4;
+        this.color = ['#fae1b2', '#dfb776', '#f3c1cf', '#ffffff', '#e8a9b8'][Math.floor(Math.random() * 5)];
+        const angle = Math.random() * Math.PI * 2;
+        const spd = Math.random() * 12 + 4;
+        this.vx = Math.cos(angle) * spd;
+        this.vy = Math.sin(angle) * spd - 3;
+        this.gravity = 0.22;
+        this.friction = 0.96;
+        this.alpha = 1;
+        this.decay = Math.random() * 0.015 + 0.01;
+        this.rot = Math.random() * 360;
+        this.rotSpeed = Math.random() * 10 - 5;
+      }
+      update() {
+        this.vx *= this.friction;
+        this.vy *= this.friction;
+        this.vy += this.gravity;
+        this.x += this.vx;
+        this.y += this.vy;
+        this.alpha -= this.decay;
+        this.rot += this.rotSpeed;
+      }
+      draw() {
+        cCtx.save();
+        cCtx.globalAlpha = Math.max(this.alpha, 0);
+        cCtx.translate(this.x, this.y);
+        cCtx.rotate((this.rot * Math.PI) / 180);
+        cCtx.fillStyle = this.color;
+        cCtx.beginPath();
+        cCtx.arc(0, 0, this.size / 2, 0, Math.PI * 2);
+        cCtx.fill();
+        cCtx.restore();
+      }
+    }
+
+    function fireConfetti(x, y, count = 90) {
+      for (let i = 0; i < count; i++) {
+        confettiPool.push(new Confetti(x, y));
+      }
+    }
+
+    function animateConfetti() {
+      cCtx.clearRect(0, 0, confCanvas.width, confCanvas.height);
+      for (let i = confettiPool.length - 1; i >= 0; i--) {
+        confettiPool[i].update();
+        confettiPool[i].draw();
+        if (confettiPool[i].alpha <= 0) confettiPool.splice(i, 1);
+      }
+      requestAnimationFrame(animateConfetti);
+    }
+    animateConfetti();
+
+
+    /* =========================================================
+       4. SPA NAVIGATION WITH SMOOTH FADE TRANSITIONS
+       ========================================================= */
+    function navigateTo(targetPageId) {
+      const activePage = document.querySelector('.page.active');
+      const targetPage = document.getElementById(targetPageId);
+      if (!targetPage || activePage === targetPage) return;
+
+      // Start music on first transition if not playing yet
+      if (!isMusicPlaying) triggerMusicStart();
+
+      // Guard: Hide roaming chat bubble when on pageVideo so it NEVER covers the video player!
+      const roamingBubble = document.getElementById('walkingCimol');
+      if (roamingBubble) {
+        if (targetPageId === 'pageVideo') {
+          roamingBubble.style.opacity = '0';
+          roamingBubble.style.pointerEvents = 'none';
+        } else {
+          roamingBubble.style.opacity = '1';
+          roamingBubble.style.pointerEvents = 'auto';
+        }
+      }
+
+      // Fade out active page smoothly
+      activePage.style.opacity = '0';
+      activePage.style.transform = 'translateY(24px) scale(0.97)';
+
+      setTimeout(() => {
+        // Clean up previous page
+        activePage.classList.remove('active');
+        activePage.style.opacity = '';
+        activePage.style.transform = '';
+
+        // Reset interactive states if returning to Intro or Start
+        if (targetPageId === 'pageIntro' || targetPageId === 'pageCountdown') {
+          document.querySelectorAll('.flip-card-wrapper.flipped').forEach(c => c.classList.remove('flipped'));
+          const gift = document.querySelector('.animated-gift');
+          if (gift) { gift.style.opacity = ''; gift.style.transform = ''; }
+        }
+
+        // Activate target page and ensure clean transition
+        targetPage.classList.add('active');
+        targetPage.style.opacity = '0';
+        targetPage.style.transform = 'translateY(24px) scale(0.97)';
+
+        // Force browser reflow so transition executes
+        void targetPage.offsetWidth;
+
+        // Transition in
+        targetPage.style.opacity = '1';
+        targetPage.style.transform = 'translateY(0) scale(1)';
+
+        // Clean up inline styles after transition finishes
+        setTimeout(() => {
+          targetPage.style.opacity = '';
+          targetPage.style.transform = '';
+        }, 500);
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        if (targetPageId === 'pageLetter' || targetPageId === 'pageOutro' || targetPageId === 'pageIntro') {
+          fireConfetti(window.innerWidth / 2, window.innerHeight / 3, 75);
+        }
+      }, 450);
+    }
+
+    function restartCountdownAndNavigate() {
+      remainingSeconds = 8;
+      updateCountdownDisplay(8);
+      btnNext.disabled = true;
+      lockIcon.textContent = "🔒";
+      lockText.textContent = "TUNGGU SAMPAI WAKTUNYA...";
+      indicator.textContent = "Beberapa detik lagi... 🤍";
+      indicator.style.color = "";
+      navigateTo('pageCountdown');
+    }
+
+
+    /* =========================================================
+       5. COUNTDOWN TIMER LOGIC & UNLOCK SYSTEM
+       ========================================================= */
+    let remainingSeconds = 8; // Hitung mundur 8 detik bawaan
+
+    const boxDays = document.getElementById('boxDays');
+    const boxHours = document.getElementById('boxHours');
+    const boxMinutes = document.getElementById('boxMinutes');
+    const boxSeconds = document.getElementById('boxSeconds');
+    const indicator = document.getElementById('countdownIndicator');
+    const btnNext = document.getElementById('btnCountdownNext');
+    const lockIcon = document.getElementById('lockIcon');
+    const lockText = document.getElementById('lockBtnText');
+
+    function updateCountdownDisplay(sec) {
+      const d = Math.floor(sec / (3600 * 24));
+      const h = Math.floor((sec % (3600 * 24)) / 3600);
+      const m = Math.floor((sec % 3600) / 60);
+      const s = sec % 60;
+
+      boxDays.textContent = String(d).padStart(2, '0');
+      boxHours.textContent = String(h).padStart(2, '0');
+      boxMinutes.textContent = String(m).padStart(2, '0');
+      boxSeconds.textContent = String(s).padStart(2, '0');
+    }
+
+    updateCountdownDisplay(remainingSeconds);
+
+    const countdownInterval = setInterval(() => {
+      remainingSeconds--;
+      if (remainingSeconds <= 0) {
+        clearInterval(countdownInterval);
+        updateCountdownDisplay(0);
+
+        fireConfetti(window.innerWidth / 2, window.innerHeight * 0.45, 120);
+
+        indicator.textContent = "Waktunya telah tiba! Buka kadomu sekarang 🤍";
+        indicator.style.color = "#fae1b2";
+
+        btnNext.disabled = false;
+        lockIcon.textContent = "🎁";
+        lockText.textContent = "BUKA KADO";
+        btnNext.onclick = () => {
+          triggerMusicStart();
+          navigateTo('pageGift');
+        };
+      } else {
+        updateCountdownDisplay(remainingSeconds);
+      }
+    }, 1000);
+
+
+    /* =========================================================
+       6. GIFT REVEAL INTERACTION (Halaman 2 -> Halaman 3)
+       ========================================================= */
+    const giftContainer = document.getElementById('giftBoxContainer');
+    const btnOpenGift = document.getElementById('btnOpenGift');
+
+    function handleGiftOpen() {
+      triggerMusicStart();
+      const rect = giftContainer.getBoundingClientRect();
+      fireConfetti(rect.left + rect.width / 2, rect.top + rect.height / 2, 100);
+
+      giftContainer.querySelector('.animated-gift').style.transform = 'scale(1.25) rotate(10deg)';
+      giftContainer.style.opacity = '0';
+      giftContainer.style.transition = 'all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
+
+      setTimeout(() => {
+        navigateTo('pageIntro');
+      }, 650);
+    }
+
+    giftContainer.addEventListener('click', handleGiftOpen);
+    btnOpenGift.addEventListener('click', handleGiftOpen);
+
+
+    /* =========================================================
+       7. 3D POLAROID FLIP CARDS WITH SECRET MESSAGES
+       ========================================================= */
+    function togglePolaroidFlip(wrapper) {
+      wrapper.classList.toggle('flipped');
+      const rect = wrapper.getBoundingClientRect();
+      fireConfetti(rect.left + rect.width / 2, rect.top + rect.height / 2, 25);
+    }
+
+
+    /* =========================================================
+       8. MAKE A WISH SHOOTING STAR CAPSULE
+       ========================================================= */
+    const wishInput = document.getElementById('userWishInput');
+    const btnSendWish = document.getElementById('btnSendWish');
+    const wishConfirmed = document.getElementById('wishConfirmedText');
+
+    btnSendWish.addEventListener('click', () => {
+      const val = wishInput.value.trim();
+      if (!val) {
+        wishInput.focus();
+        wishInput.style.borderColor = '#e28fa2';
+        setTimeout(() => wishInput.style.borderColor = '', 1500);
+        return;
+      }
+
+      launchShootingStar();
+      setTimeout(launchShootingStar, 250);
+      setTimeout(launchShootingStar, 500);
+
+      fireConfetti(window.innerWidth / 2, window.innerHeight * 0.7, 80);
+
+      wishConfirmed.style.display = 'block';
+      wishInput.value = '';
+      btnSendWish.disabled = true;
+      btnSendWish.textContent = 'Permohonan Terkirim 🌠';
+    });
+
+
+    /* =========================================================
+       9. KANGEN KAMU RANDOM LOVE NOTES
+       ========================================================= */
+    const kangenNotes = [
+      "Kalau kamu lagi kangen, ingat ya kalau di sini ada seseorang yang sayangnya berlipat-lipat kali lebih banyak ke kamu. Peluk hangat dari jauh 🤍",
+      "Kamu itu alasan kenapa duniaku terasa jauh lebih tenang dan penuh warna. Terima kasih sudah selalu ada ya, cintaku ✨",
+      "Setiap kali aku kepikiran tentang masa depan, yang paling jelas kulihat adalah tangan kita yang tetap bergandengan 🤍",
+      "Jangan capek-capek ya hari ini. Minum air putih yang cukup, senyum manisnya jangan lupa, dan ingat kalau aku selalu bangga sama kamu 🌸",
+      "Di antara miliaran manusia di bumi ini, aku paling bersyukur karena takdir mempertemukan aku sama kamu 🤍",
+      "Kalau rindu itu punya suara, mungkin telingamu sekarang berdengung karena namamu selalu kusebut dalam doa-doaku ✨",
+      "Kamu adalah rumah ternyaman yang selalu jadi tempat pulang terbaik untuk hatiku 🤍"
+    ];
+
+    let currentNoteIndex = 0;
+    const kangenModal = document.getElementById('kangenModal');
+    const kangenText = document.getElementById('kangenRandomMessage');
+
+    document.getElementById('openKangenModalBtn').addEventListener('click', () => {
+      generateNextKangenMessage();
+      kangenModal.classList.add('active');
+      fireConfetti(window.innerWidth / 2, window.innerHeight / 2, 60);
+    });
+
+    function generateNextKangenMessage() {
+      currentNoteIndex = (currentNoteIndex + 1) % kangenNotes.length;
+      kangenText.textContent = `"${kangenNotes[currentNoteIndex]}"`;
+    }
+
+    function closeKangenModal(e) {
+      if (e && e.target !== e.currentTarget && !e.target.classList.contains('modal-close-x')) return;
+      kangenModal.classList.remove('active');
+    }
+  
+    /* =========================================================
+       PHOTO LIGHTBOX MODAL LOGIC
+       ========================================================= */
+    const photoLightbox = document.getElementById('photoLightboxModal');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+
+    function openPhotoModal(src, caption, event) {
+      if (event) event.stopPropagation(); // Don't trigger polaroid flip
+      lightboxImg.src = src;
+      lightboxCaption.textContent = caption;
+      photoLightbox.classList.add('active');
+      fireConfetti(window.innerWidth / 2, window.innerHeight / 2, 40);
+    }
+
+    function closePhotoModal(event) {
+      if (event && event.target !== event.currentTarget && !event.target.classList.contains('modal-close-x')) return;
+      photoLightbox.classList.remove('active');
+      setTimeout(() => { lightboxImg.src = ''; }, 300);
+    }
+
+    // Interactive logic for the chat bubble above the video
+    const videoChatBubble = document.getElementById('videoChatBubble');
+    const videoCimolText = document.getElementById('videoCimolText');
+    if (videoChatBubble && videoCimolText) {
+      let vIndex = 0;
+      let vTimer = null;
+      videoChatBubble.addEventListener('click', (e) => {
+        e.stopPropagation();
+        videoChatBubble.classList.add('chat-pop-burst');
+        setTimeout(() => videoChatBubble.classList.remove('chat-pop-burst'), 600);
+
+        const rect = videoChatBubble.getBoundingClientRect();
+        fireConfetti(rect.left + rect.width / 2, rect.top, 40);
+
+        vIndex = (vIndex + 1) % cimolQuotes.length;
+        videoCimolText.textContent = '“' + cimolQuotes[vIndex] + '”';
+
+        clearTimeout(vTimer);
+        vTimer = setTimeout(() => {
+          videoCimolText.textContent = '“jalan\" belii cimoll 🍡🤍”';
+        }, 4000);
+      });
+    }
+
+  </script>
+
+  <!-- =========================================================
+       PHOTO LIGHTBOX MODAL (VIEW FULL UNRESTRICTED PHOTO)
+       ========================================================= -->
+  <div class="photo-lightbox-veil" id="photoLightboxModal" onclick="closePhotoModal(event)">
+    <div class="photo-lightbox-box" onclick="event.stopPropagation()">
+      <button class="modal-close-x" onclick="closePhotoModal()">✕</button>
+      <div class="photo-lightbox-img-wrap">
+        <img id="lightboxImg" src="" alt="Full Photo">
+      </div>
+      <p class="photo-lightbox-caption" id="lightboxCaption"></p>
+    </div>
+  </div>
+
+</body>
+</html>
